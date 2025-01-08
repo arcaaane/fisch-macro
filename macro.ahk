@@ -1,22 +1,24 @@
+
+
 p::
 Loop
 {
-	{
-		Click down
-		Sleep 1000
-		Click up
-		Send +\
-		Loop 10
-		{
-			Send {Down}
-			Send {Enter}
-		}
-		Loop 15
-		{
-			Click
-			Sleep 250
-		}
-		Sleep 500
-	}
+    Click down
+    Sleep 1000
+    Click up
+
+    Send {\}
+
+    Loop, 10
+    {
+				Sleep 100
+        Send {Down}
+        Sleep 100 
+        Send {Enter}
+        Sleep 100
+    }
+
+    Sleep 15000
 }
 return
+t::ExitApp
