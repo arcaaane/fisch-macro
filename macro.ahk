@@ -98,17 +98,14 @@ ExitApp
 
 ; ==============================
 
-ToolX := WindowWidth/20
-Tooltip1 := (WindowHeight/2)-(20*9)
-Tooltip2 := (WindowHeight/2)-(20*8)
-Tooltip3 := (WindowHeight/2)-(20*7)
-Tooltip4 := (WindowHeight/2)-(20*6)
-Tooltip5 := (WindowHeight/2)-(20*5)
+ToolX := A_WindowWidth/20
+Tooltip1 := (A_WindowHeight/2)-(20*9)
+Tooltip2 := (A_WindowHeight/2)-(20*8)
+Tooltip3 := (A_WindowHeight/2)-(20*7)
+Tooltip4 := (A_WindowHeight/2)-(20*6)
+Tooltip5 := (A_WindowHeight/2)-(20*5)
 
 ; ==============================
-
-ToolX := ScreenHeight/2
-ToolX2 := ToolX - 25
 
 Tooltip, Press %startKey% to start, %ToolX%, %Tooltip1%, 1
 ToolTip, Task: None, %ToolX%, %Tooltip2%, 2
