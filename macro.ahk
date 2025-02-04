@@ -31,6 +31,8 @@ failAmount := 5
 ; Navigation Key
 navigationKey := "/"
 
+; How lenient the program is towards detecting color
+
 ; ========== Macro Settings ==========
 
 ; Change to false if you dont want it to auto shake
