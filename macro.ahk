@@ -115,6 +115,34 @@ p::
 global rodCast, ToolX, Tooltip2, failAmount, navigationKey
 Loop
 {
+
+; ==============================
+
+if (lowergraphics)
+{
+    Loop, 10
+    {
+        ToolTip, Task: Lowering Graphics, %ToolX%, %Tooltip2%, 2
+        Send, +{F10}
+        Sleep 100
+    }
+}
+
+; ==============================
+
+if (autozoom)
+{
+    Loop, 30
+    {
+        ToolTip, Task: Enabling First Person, %ToolX%, %Tooltip2%, 2
+        Send, {WheelDown}
+        Sleep 100
+    }
+    Send, {WheelUp}
+}
+
+; ==============================
+
     ; Cast rod
     Sleep 200
     ToolTip, Task: Casting Rod, %ToolX%, %Tooltip2%, 2
