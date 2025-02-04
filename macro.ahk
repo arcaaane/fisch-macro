@@ -1,6 +1,5 @@
 #SingleInstance Force
 
-
 ; ========== Preferences ==========
 
 ; What the Rod's control is
