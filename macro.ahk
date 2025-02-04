@@ -106,6 +106,15 @@ Tooltip5 := (A_WindowHeight/2)-(20*5)
 
 ; ==============================
 
+; PixelSearch, FoundX, FoundY, 520, 809, 1379, 942, 0x434B5B, 3, Fast RGB
+
+Sq1 := 520
+Sq2 := 809
+Sq3 := 1379
+Sq4 := 942
+
+; ==============================
+
 Tooltip, Press %startKey% to start, %ToolX%, %Tooltip1%, 1
 ToolTip, Task: None, %ToolX%, %Tooltip2%, 2
 
@@ -161,7 +170,7 @@ if (autozoom)
     Send {navigationKey}
     Sleep 200
     While (true) {
-       PixelSearch, FoundX, FoundY, 520, 809, 1379, 942, 0x434B5B, 3, Fast RGB
+       PixelSearch, FoundX, FoundY, Sq1, Sq2, Sq3, Sq4, 0x434B5B, 3, Fast RGB
        if (ErrorLevel) {
            Send {Down}
            Sleep 50
@@ -178,7 +187,7 @@ if (autozoom)
     fail := 0
     ToolTip, Task: Playing Minigame, %ToolX%, %Tooltip2%, 2
     While (fail < failAmount) {
-    PixelSearch, FoundX, FoundY, 520, 809, 1379, 942, 0x434B5B, 3, Fast RGB
+    PixelSearch, FoundX, FoundY, Sq1, Sq2, Sq3, Sq4, 0x434B5B, 3, Fast RGB
     if (!ErrorLevel) {
         Tooltip, FISCH LOCATION, FoundX, 800, 3
         while (FoundX > 969) {
