@@ -163,7 +163,7 @@ Loop
         }
     } else {
         fail += 1
-        Sleep 50
+        Sleep 100
     }
 }
 
