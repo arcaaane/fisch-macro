@@ -79,7 +79,7 @@ if (autoCast != true and autoCast != false)
 if (control < .2)
     {
         msgbox, rod control must be greater than .2 to function correctly
-				ExitApp
+	ExitApp
     }
 
 ; ==============================
@@ -112,6 +112,7 @@ ToolTip, Task: None, %ToolX%, %Tooltip2%, 2
 ; ==============================
 
 p::
+global rodCast, ToolX, Tooltip2, failAmount, navigationKey
 Loop
 {
     ; Cast rod
