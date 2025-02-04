@@ -109,22 +109,26 @@ Tooltip5 := (A_WindowHeight/2)-(20*5)
 Tooltip, Press %startKey% to start, %ToolX%, %Tooltip1%, 1
 ToolTip, Task: None, %ToolX%, %Tooltip2%, 2
 
+; ==============================
+
 p::
 Loop
-{  
-    fail := 0
+{
+    ; Cast rod
     Sleep 200
-    ToolTip, Task: Casting Rod, -835, 170, 2
+    ToolTip, Task: Casting Rod, %ToolX%, %Tooltip2%, 2
     Sleep 50
     Click down
     Sleep rodCast
     Click up
     Sleep 50
-    ToolTip, Task: Shaking Rod, -855, 170, 2
+
+; ==============================
+
+    ; Shake rod
+    fail := 0
+    ToolTip, Task: Shaking Rod, %ToolX%, %Tooltip2%, 2
     Sleep 50
-    BarColor := 0x000000
-    barCenterX := 943
-    barCenterY := 884
     Send {navigationKey}
     Sleep 200
     While (true) {
@@ -139,26 +143,33 @@ Loop
        }
     }
     Sleep 350
-    ToolTip, Task: Playing Minigame, -855, 170, 2
+
+; ==============================
+
+    fail := 0
+    ToolTip, Task: Playing Minigame, %ToolX%, %Tooltip2%, 2
     While (fail < failAmount) {
-       PixelSearch, FoundX, FoundY, 520, 809, 1379, 942, 0x434B5B, 3, Fast RGB
-       if (!ErrorLevel) {
-           Tooltip, FISCH LOCATION, FoundX, 800, 3
-           if (FoundX > 969) {
-      Click Down
-               Sleep 50
-  }
-  if (FoundX < 969) {
-      Click up
+    PixelSearch, FoundX, FoundY, 520, 809, 1379, 942, 0x434B5B, 3, Fast RGB
+    if (!ErrorLevel) {
+        Tooltip, FISCH LOCATION, FoundX, 800, 3
+        if (FoundX > 969) {
+            Click Down
             Sleep 50
-  }
-       } else {
-           Tooltip, Not Found, -855, 170, 2
-           fail += 1
-  Sleep 50
-       }
+        }
+        if (FoundX < 969) {
+            Click Up
+            Sleep 50
+        }
+    } else {
+        fail += 1
+        Sleep 50
     }
-    ToolTip, Task: Reseting, -855, 170, 2
-    Sleep 3000
+}
+
+; ==============================
+
+; Prepare for next catch
+ToolTip, Task: Reseting, %ToolX%, %Tooltip2%, 2
+Sleep 3000
 }
 exitKey::ExitApp
