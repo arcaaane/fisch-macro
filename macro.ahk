@@ -153,11 +153,11 @@ Loop
     PixelSearch, FoundX, FoundY, 520, 809, 1379, 942, 0x434B5B, 3, Fast RGB
     if (!ErrorLevel) {
         Tooltip, FISCH LOCATION, FoundX, 800, 3
-        if (FoundX > 969) {
+        while (FoundX > 969) {
             Click Down
             Sleep 50
         }
-        if (FoundX < 969) {
+        while (FoundX < 969) {
             Click Up
             Sleep 50
         }
