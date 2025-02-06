@@ -585,9 +585,7 @@ else
 	NavigationCounter++
 	tooltip, Attempt Count: %NavigationCounter%, %TooltipX%, %Tooltip8%, 8
 	sleep 1
-	send {s}
-	sleep 1
-	send {enter}
+	sleep 100
 	goto NavigationShakeModeRedo
 	}
 
